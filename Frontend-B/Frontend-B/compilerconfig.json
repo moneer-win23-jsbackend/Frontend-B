@@ -1,0 +1,14 @@
+﻿[
+  {
+    "outputFile": "wwwroot/css/site.css",
+    "inputFile": "wwwroot/css/site.scss"
+  },
+  {
+    "outputFile": "Components/Sections/Header.razor.css",
+    "inputFile": "Components/Sections/Header.razor.scss"
+  },
+  {
+    "outputFile": "wwwroot/site.css",
+    "inputFile": "wwwroot/site.scss"
+  }
+]
