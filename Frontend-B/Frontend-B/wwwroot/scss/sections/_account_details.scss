@@ -1,123 +1,89 @@
-/*.avatar {
-    width: 200px;
-    height: auto;
-    border-radius: 50%;
-}
-*/
-
-
-
-
-
-
-/*.account-profile {
-    border-right: 1px solid #E2E5f1;
-    height: 100%;
-    text-align: center;
-    padding: 35px 12px;
-
-    @media only screen and (max-width: 768px) {
-        border: none;
-    }
-
-    .profile {
-
-        .profile-image {
-            position: relative;
-            display: inline-block
-
-                img {
-                width: 120px;
-                border-radius: 50%;
-            }
-      
-        }
-    }
-}*/
-
 .account-details {
+    height: 100%;
 
     .container {
+        height: 100%;
         display: grid;
-        grid-template-columns: auto 1fr;
-        grid-template-areas: "aside content";
+        gap: 50px;
+        grid-template-columns: 1fr;
 
         aside {
-            grid-area: aside;
-            margin-right: 32px;
-            border-right: 1px solid #808080;
-            padding: 32px;
+            height: 100%;
+            padding-top: 50px;
 
-            .account-profile {
+            .profile {
+                text-align: center;
 
-                .profile {
-                    .profile-image {
-                        position: relative;
+                .profile-image {
+                    display: inline-block;
+                    position: relative;
 
-                        img {
-                            max-width: 120px;
-                            max-height: 120px;
-                            border-radius: 50%;
-                        }
-
-                        form {
-                            position: absolute;
-                            bottom: 0;
-                            right: -80px;
-
-                            input {
-                            }
-
-                            label {
-                            }
-                        }
+                    img {
+                        height: 120px;
+                        width: 120px;
+                        border-radius: 50px;
+                        object-fit: cover;
                     }
 
-                    .profile-info {
+                    a {
+                        position: absolute;
+                        bottom: 5px;
+                        right: 0;
+                    }
+                }
 
-                        h3 {
-                        }
+                .profile-info {
+                    margin-top: 15px;
 
-                        p {
-                        }
+                    h3 {
+                        font-size: 20px;
+                        font-weight: 800;
+                        margin-bottom: 5px;
+                    }
+
+                    p {
+                        color:burlywood;
+                    }
+                }
+            }
+
+            nav {
+                margin-top: 50px;
+                display: flex;
+                gap: 10px;
+                justify-content: center;
+
+                .btn-nav {
+                    text-align: left;
+                    padding: 15px 18px;
+
+                    i {
+                        margin: 0;
+                    }
+
+                    span {
+                        display: none;
                     }
                 }
             }
         }
 
-        .content {
-            grid-area: content;
+        .account-information {
+            height: 100%;
+            width: 100%;
 
-            form {
+            h2 {
+                text-align: center;
+                border-top: 1px solid #808080;
+                padding-top: 30px;
+            }
 
-                h5 {
-                }
+            #basicInfoFrom {
+                padding-bottom: 50px;
 
-                .form-content {
-                    .input-wrapper {
-                        display: flex;
-                        justify-content: space-between;
-                        width: 100% !important;
-                        gap: 16px;
-
-                        .input-group {
-                            width: 100% !important;
-
-                            label {
-                            }
-
-                            input {
-                            }
-
-                            span {
-                            }
-                        }
-                    }
-
-                    .form-button {
-                        display: flex;
-                        margin-top: 16px;
-                    }
+                .form-basicinfo-content {
+                    display: grid;
+                    gap: 20px;
                 }
             }
         }

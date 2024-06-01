@@ -10,3 +10,11 @@
 @using Frontend_B
 @using Frontend_B.Client
 @using Frontend_B.Components
+@using Microsoft.AspNetCore.Authorization
+@using Frontend_B.Data
+@using Microsoft.AspNetCore.Identity
+
+
+@inject HttpClient Http
+@inject UserManager<ApplicationUser> UserManager
+@inject SignInManager<ApplicationUser> SignInManager
