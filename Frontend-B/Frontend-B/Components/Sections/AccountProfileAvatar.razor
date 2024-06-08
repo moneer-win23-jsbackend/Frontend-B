@@ -1,5 +1,7 @@
 ﻿@using Microsoft.Net.Http.Headers
 @attribute [StreamRendering]
+
+
 @if(user == null)
 {
     <p>Loading...</p>
@@ -27,7 +29,8 @@ else
 
 
 @code {
-
+    [Parameter]
+    public ApplicationUser User { get; set; } = default!;
     private ApplicationUser user = default!;
     private MultipartFormDataContent uploadModel = new MultipartFormDataContent();
     private IBrowserFile? selectedFile;
@@ -35,10 +38,6 @@ else
     [CascadingParameter]
     private HttpContext HttpContext { get; set; } = default!;
 
-    protected override async Task OnInitializedAsync()
-    {
-        await LoadUserDataAsync();
-    }
 
     private void HandleFileSelected(InputFileChangeEventArgs e)
     {

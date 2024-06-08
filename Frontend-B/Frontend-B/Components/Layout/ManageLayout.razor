@@ -1,11 +1,13 @@
 ﻿@inherits LayoutComponentBase
 @layout AccountLayout
+@using Microsoft.AspNetCore.Http
+
 
 <section class="account-details">
     <div class="container">
 
         <aside>
-            <Frontend_B.Components.Sections.AccountProfileAvatar />
+            <Frontend_B.Components.Sections.AccountProfileAvatar User="user" />
             <ManageNavMenu />
         </aside>
         <div class="content">
@@ -14,3 +16,23 @@
 
     </div>
 </section>
+
+
+@code{
+    [CascadingParameter]
+    private ApplicationUser user { get; set; } = default!;
+
+    [CascadingParameter]
+    private HttpContext httpContext { get; set; } = default!;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadUserDataAsync();
+    }
+
+    private async Task LoadUserDataAsync()
+    {
+        user = await UserManager.GetUserAsync(httpContext.User) ?? null!;
+    }
+
+}
